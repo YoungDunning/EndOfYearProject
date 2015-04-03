@@ -13,19 +13,22 @@ import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 
 public class Geolocation {
-	
+
+	private static float lat;
+	private static float lon;
+
 	/*
-	 * CHANGE THE MAIN METHODS INTO A COUPLE DIFFERENT METHODS
-	 * (getCountry)
+	 * CHANGE THE MAIN METHODS INTO A COUPLE DIFFERENT METHODS (getCountry)
 	 */
-	
-	public String getCountry(String longitude, String latitude){
-		return null;
+
+	public String getCountry(String longitude, String latitude) {
+
+		
+		return latitude;
+
 	}
 
 	public static void main(String[] args) {
-
-		float lat, lon;
 
 		Scanner in = new Scanner(System.in);
 
@@ -65,16 +68,20 @@ public class Geolocation {
 			JSONObject rec = results.getJSONObject(0);
 			JSONArray address_components = rec
 					.getJSONArray("address_components");
-			for (int i = 0; i < address_components.size(); i++) {
+			for (int i = 0; i < address_components.size(); i++) 
+			{
 				JSONObject rec1 = address_components.getJSONObject(i);
 				// trace(rec1.getString("long_name"));
 				JSONArray types = rec1.getJSONArray("types");
 				String comp = types.getString(0);
 
-				if (comp.equals("locality")) {
+				if (comp.equals("locality")) 
+				{
 					// System.out.println("city ———— "+rec1.getString("long_name"));
-				} else if (comp.equals("country")) {
-					System.out.println("Your outputted country is:	"
+				}
+				else if (comp.equals("country")) 
+				{
+					System.out.println("Your outputted country is:"
 							+ rec1.getString("long_name"));
 				}
 			}
@@ -82,10 +89,14 @@ public class Geolocation {
 			// System.out.println("formatted_address———— "+formatted_address);
 
 			conn.disconnect();
-		} catch (MalformedURLException e) {
+		} 
+		catch (MalformedURLException e) 
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (IOException e) {
+		} 
+		catch (IOException e) 
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

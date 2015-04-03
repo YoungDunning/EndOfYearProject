@@ -11,7 +11,7 @@
     </display>  
   </class>  
   <class id="2" language="java" name="testcases.GeolocationTest" project="GeocodeReverse" 
-    file="/GeocodeReverse/src/testcases/GeolocationTest.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="/EndOfYearGUI/src/testcases/GeolocationTest.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="171" width="201" x="330" y="131"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
